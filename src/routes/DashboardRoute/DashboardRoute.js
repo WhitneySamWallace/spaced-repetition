@@ -23,7 +23,6 @@ class DashboardRoute extends Component {
       )
         .then(data => {
           data.words.map(word => {
-            console.log(word);
             wordsArr.push(word.original);
             this.setState({incorrect_count: word.incorrect_count, correct_count: word.correct_count, words: wordsArr})
             return wordsArr;
