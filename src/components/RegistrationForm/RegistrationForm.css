@@ -1,0 +1,45 @@
+.registration-form{
+
+    border: 1px solid white;
+    text-align: center;
+    font-size: 18px;
+    background-image: url('../../images/Notecard.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    color: black;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 30px; 
+}
+
+.Button{
+
+    margin-top: 10px;
+    background: white;
+    border-radius: 8px;
+    border: 1px solid black;
+    font-size: 16px;
+    margin-bottom: 1px;
+    text-align: center;
+    margin-bottom: 10px;
+
+}
+
+.login-link{
+    font-size: 16px;
+    color: black;
+}
+
+.Label{
+    padding: 10px;
+}
+
+.Input{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 1px solid black;
+}
+
+footer {
+   text-align: center;
+}
