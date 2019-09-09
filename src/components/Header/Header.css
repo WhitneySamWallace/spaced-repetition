@@ -1,0 +1,62 @@
+.Header {
+    height: 40px;
+    display: flex;
+    align-items: normal;
+    justify-content: space-between;
+  }
+  
+  .Header h1{
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 5px;
+    text-decoration: none;
+    color: black;
+  }
+
+  .Header a{
+      color: black;
+      text-decoration: none;
+  }
+
+  .Header_not-logged-in {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: flex-end;
+    font-size: 16px;
+    margin-right: 5px;
+  }
+  
+  .Header_not-logged-in a {
+    border: 1px solid white;
+    background: black;
+    color: white;
+    border-radius: 15px;
+    padding: 5px 15px;
+    margin-right: 10px;
+    text-decoration: none;
+    margin-top: 5px;
+    font-size: 16px;
+    text-align: center;
+  }
+  
+  .Header_logged-in a {
+    border: 1px solid white;
+    background: black;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 15px;
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .username-container{
+      margin-bottom: 10px;
+      text-align: center;
+  }
+
+  .logged-in-container{
+      text-align: center;
+      margin-right: 10px;
+      font-size: 16px;
+  }

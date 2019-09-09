@@ -7,8 +7,10 @@
     border-radius: 15px;
     width: 75%;
     font-size: 18px;
-    background: gray;
-    color: white;
+    background-image: url('../../images/Notecard.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    color: black;
     margin-right: auto;
     margin-left: auto;
     padding: 30px; 

@@ -2,35 +2,32 @@
 
     border: 1px solid white;
     text-align: center;
-    margin-top: 25px;
-    margin-bottom: 15px;
-    border-radius: 15px;
-    width: 75%;
     font-size: 18px;
-    background: gray;
-    color: white;
+    background-image: url('../../images/Notecard.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    color: black;
     margin-right: auto;
     margin-left: auto;
     padding: 30px; 
-
 }
 
 .Button{
 
-    margin-top: 30px;
+    margin-top: 10px;
     background: white;
     border-radius: 8px;
-    border: 1px solid white;
+    border: 1px solid black;
     font-size: 16px;
-    margin-bottom: 10px;
+    margin-bottom: 1px;
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 
 }
 
 .login-link{
     font-size: 16px;
-    text-decoration: none;
+    color: black;
 }
 
 .Label{
@@ -38,8 +35,9 @@
 }
 
 .Input{
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 1px solid black;
 }
 
 footer {
