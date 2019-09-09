@@ -34,6 +34,11 @@ export default class App extends Component {
               component={DashboardRoute}
             />
             <PrivateRoute
+            exact
+            path={'/languageRequest'}
+            component={DashboardRoute}
+            />
+            <PrivateRoute
               path={'/learn'}
               component={LearningRoute}
             />
