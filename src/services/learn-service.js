@@ -20,6 +20,20 @@ const learnService = {
   getCounts() {},
   //get total score
   getScore() {},
+
+  checkAnswer(){
+    return fetch(`${config.API_ENDPOINT}/language/guess`, {
+      method: 'POST',
+      headers: {
+        'authorization': `Bearer ${TokenService.getAuthToken()}`,
+      }
+    })
+    .then(res =>
+        (!res.ok)
+        ? res.json().then(e => Promise.reject(e))
+        : res.json()
+      )
+  }
 }
 
 export default learnService;
