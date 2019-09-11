@@ -39,9 +39,11 @@ class DashboardRoute extends Component {
     });
     return (
       <section className='dashboard'>
-        <h2>Latin</h2>
-        <section className='total-correct'>Total correct answers: 7</section>
-        <Link to='/learn'><button>Start practicing</button></Link>
+        <section className='summary'>
+          <h2>Latin</h2>
+          <section className='total-correct'>Total correct answers: 7</section>
+          <Link to='/learn'><button>Start practicing</button></Link>
+        </section>
         <h3>Words to practice</h3>
         <ul className='wordsList'>
           {words}

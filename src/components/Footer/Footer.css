@@ -1,0 +1,11 @@
+.footer {
+  display: fixed;
+  border-top: 1px solid lightgray;
+  font-family: 'Bangers', cursive;
+  font-size: 20px;
+}
+
+.footer p {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}

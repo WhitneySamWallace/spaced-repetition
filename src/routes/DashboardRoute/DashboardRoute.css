@@ -5,15 +5,23 @@
 
 .dashboard h2 {
   font-family: 'Bangers', serif;
-  font-size: 35px;
+  font-size: 50px;
   margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+.summary {
+  background-color: lightgray;
+  padding-top: 10px;
+  padding-bottom: 15px;
+  margin-top: 10px;
 }
 
 .total-correct {
   font-family: 'Bangers', serif;
   background-color: rgba(104, 47, 226, 0.792);
-  padding-top: 3px;
-  padding-bottom: 3px;
+  padding-top: 5px;
+  padding-bottom: 5px;
   font-size: 30px;
   color: white;
 }
