@@ -3,10 +3,13 @@ import {Link} from 'react-router-dom';
 import config from '../../config';
 import TokenService from '../../services/token-service';
 import './DashboardRoute.css';
+// import learnService from '../../services/learn-service';
 
 class DashboardRoute extends Component {
   state =  {
-    words: []
+    words: [],
+    totalScore: 0,
+    language: null,
   }
 
   componentDidMount() {
@@ -20,17 +23,20 @@ class DashboardRoute extends Component {
         (!res.ok) ? res.json().then(e => Promise.reject(e)) : res.json()
       )
         .then(data => {
+          console.log(data);
           data.words.map(word => {
             wordsArr.push({word: word.original, correct: word.correct_count, incorrect: word.incorrect_count});
 
             return wordsArr;
           })
-          this.setState({words: wordsArr});
+          this.setState({words: wordsArr, language: data.language.name, totalScore: data.language.total_score});
         })
         .catch(error => {
           console.error({error});
-        })
+        })   
   }
+
+
 
   render() {
     let words = this.state.words.map((word, index) => {
@@ -38,8 +44,8 @@ class DashboardRoute extends Component {
     });
     return (
       <section className='dashboard'>
-        <h2>Latin</h2>
-        <section>Total correct answers: 7</section>
+        <h2>{this.state.language}</h2>
+        <section>Total correct answers: {this.state.totalScore}</section>
         <Link to='/learn'><button>Start practicing</button></Link>
         <h3>Words to practice</h3>
         <ul className='wordsList'>

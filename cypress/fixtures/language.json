@@ -1,7 +1,7 @@
 {
   "language": {
     "id": 1,
-    "name": "Latin",
+    "name": "Test language 1",
     "user_id": 1,
     "head": 5,
     "total_score": 7
@@ -9,8 +9,8 @@
   "words": [
     {
       "id": 1,
-      "original": "annus",
-      "translation": "year",
+      "original": "original 1",
+      "translation": "translation 1",
       "memory_value": 0,
       "incorrect_count": 0,
       "correct_count": 0,
@@ -19,91 +19,41 @@
     },
     {
       "id": 2,
-      "original": "aqua",
-      "translation": "water",
+      "original": "original 2",
+      "translation": "translation 2",
       "memory_value": 0,
       "incorrect_count": 0,
-      "correct_count": 0,
+      "correct_count": 2,
       "language_id": 1,
       "next": 3
     },
     {
       "id": 3,
-      "original": "caput",
-      "translation": "head",
+      "original": "original 3",
+      "translation": "translation 3",
       "memory_value": 0,
-      "incorrect_count": 0,
-      "correct_count": 0,
+      "incorrect_count": 3,
+      "correct_count": 6,
       "language_id": 1,
       "next": 4
     },
     {
       "id": 4,
-      "original": "canis",
-      "translation": "dog",
+      "original": "original 4",
+      "translation": "translation 4",
       "memory_value": 0,
-      "incorrect_count": 0,
-      "correct_count": 0,
+      "incorrect_count": 2,
+      "correct_count": 6,
       "language_id": 1,
       "next": 5
     },
     {
       "id": 5,
-      "original": "equus",
-      "translation": "horse",
+      "original": "original 5",
+      "translation": "translation 5",
       "memory_value": 0,
       "incorrect_count": 0,
-      "correct_count": 0,
-      "language_id": 1,
-      "next": 6
-    },
-    {
-      "id": 6,
-      "original": "iris",
-      "translation": "rainbow",
-      "memory_value": 0,
-      "incorrect_count": 0,
-      "correct_count": 0,
-      "language_id": 1,
-      "next": 7
-    },
-    {
-      "id": 7,
-      "original": "mare",
-      "translation": "sea",
-      "memory_value": 0,
-      "incorrect_count": 0,
-      "correct_count": 0,
-      "language_id": 1,
-      "next": 8
-    },
-    {
-      "id": 8,
-      "original": "tempus",
-      "translation": "time",
-      "memory_value": 0,
-      "incorrect_count": 0,
-      "correct_count": 0,
-      "language_id": 1,
-      "next": 9
-    },
-    {
-      "id": 9,
-      "original": "nihil",
-      "translation": "nothing",
-      "memory_value": 0,
-      "incorrect_count": 0,
-      "correct_count": 0,
-      "language_id": 1,
-      "next": 10
-    },
-    {
-      "id": 10,
-      "original": "hortus",
-      "translation": "garden",
-      "memory_value": 0,
-      "incorrect_count": 0,
-      "correct_count": 0,
+      "correct_count": 9,
       "language_id": 1,
       "next": null
     }

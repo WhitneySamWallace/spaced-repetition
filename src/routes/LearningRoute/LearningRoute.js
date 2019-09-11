@@ -13,7 +13,6 @@ class LearningRoute extends Component {
   componentDidMount() {
     learnService.getWord()
       .then(res => {
-        console.log(res)
         this.setState({
           nextWord: res.nextWord,
           wordCorrectCount: res.wordCorrectCount,
@@ -31,6 +30,7 @@ class LearningRoute extends Component {
           wordCorrectCount: res.wordCorrectCount,
           wordIncorrectCount: res.wordIncorrectCount,
           totalScore: res.totalScore,
+          isCorrect: null,
         })
       });
   }
