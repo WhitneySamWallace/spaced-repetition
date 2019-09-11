@@ -1,8 +1,74 @@
 .dashboard {
   text-align: center;
+  font-family: 'Gloria Hallelujah', cursive;
 }
 
-.wordsList {
+.dashboard h2 {
+  font-family: 'Bangers', serif;
+  font-size: 35px;
+  margin-bottom: 5px;
+}
+
+.total-correct {
+  font-family: 'Bangers', serif;
+  background-color: rgba(104, 47, 226, 0.792);
+  padding-top: 3px;
+  padding-bottom: 3px;
+  font-size: 30px;
+  color: white;
+}
+
+.dashboard button {
+  margin-top: 10px;
+  background-color: black;
+  color: white;
+  padding: 5px 15px;
+  border-radius: 15px;
+  font-size: 25px;
+  text-align: center;
+  font-family: 'Bangers', cursive;
+}
+
+.dashboard button:hover {
+  background-color: rgba(104, 47, 226, 0.792);
+}
+
+.dashboard h3 {
+  font-family: 'Bangers', cursive;
+  font-size: 25px;
+}
+
+.dashboard ul {
   list-style-type: none;
   padding-left: 0px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-right: 10px;
+  padding-left: 10px;
+} 
+
+.dashboard ul li {
+  background-image: url('../../images/Sticky.svg');
+  background-repeat: no-repeat;
+  background-position: top, left;
+  background-size:300px 300px;
+  width: 300px;
+  height: 300px;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.dashboard ul li h4 {
+  font-family: 'Gloria Hallelujah', cursive;
+  font-size: 50px;
+  margin-bottom: 3px;
+  margin-top: 25px;
+}
+
+.dashboard ul li p {
+  font-size: 20px;
+  margin-top: 0;
+  margin-bottom: 3px;
 }

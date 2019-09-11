@@ -1,17 +1,38 @@
 .LoginForm{
-
     border: 1px solid white;
     text-align: center;
-    margin-top: 25px;
-    margin-bottom: 15px;
-    border-radius: 15px;
-    width: 75%;
     font-size: 18px;
-    background-image: url('../../images/Notecard.jpg');
+    background-image: url('../../images/longnotecard.svg');
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: top;
+    background-size: 90vw;
+    /* height: 380px; */
     color: black;
-    margin-right: auto;
+    /* margin-right: auto;
     margin-left: auto;
-    padding: 30px; 
+    padding: 30px;  */
+    margin-right: 20px;
+    margin-left: 0px;
+    margin-bottom: 30px;
+    padding: 30px;
+    font-family: 'Gloria Hallelujah', cursive; 
 }
+
+.alert-log-in {
+    margin-top: 80px;
+}
+
+.LoginForm input {
+    font-family: 'Gloria Hallelujah', cursive;
+    font-size: 13px;
+}
+
+/* MEDIA QUERIES */
+@media only screen and (min-width: 600px) {
+    .LoginForm {
+        background-image: url('../../images/Notecard.svg');    
+        background-size: 600px;
+    }
+}
+
+

@@ -40,7 +40,7 @@ class DashboardRoute extends Component {
     return (
       <section className='dashboard'>
         <h2>Latin</h2>
-        <section>Total correct answers: 7</section>
+        <section className='total-correct'>Total correct answers: 7</section>
         <Link to='/learn'><button>Start practicing</button></Link>
         <h3>Words to practice</h3>
         <ul className='wordsList'>
