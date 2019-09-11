@@ -4,6 +4,7 @@ import TokenService from '../services/token-service'
 const learnService = {
   //get word to display
   getWord() {
+    console.log('get head')
     return fetch(`${config.API_ENDPOINT}/language/head`, {
       method: 'GET',
       headers: {
@@ -22,6 +23,7 @@ const learnService = {
   getScore() {},
 
   checkAnswer(guess){
+    console.log('get response')
     return fetch(`${config.API_ENDPOINT}/language/guess`, {
       method: 'POST',
       headers: {

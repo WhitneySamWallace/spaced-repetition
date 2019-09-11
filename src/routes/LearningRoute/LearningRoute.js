@@ -13,6 +13,7 @@ class LearningRoute extends Component {
   componentDidMount() {
     learnService.getWord()
       .then(res => {
+        console.log('get word finished')
         this.setState({
           nextWord: res.nextWord,
           wordCorrectCount: res.wordCorrectCount,
@@ -39,11 +40,13 @@ class LearningRoute extends Component {
 
     e.preventDefault()
 
+    console.log('handle submit called')
+
     const { guessInput } = e.target;
 
     learnService.checkAnswer(guessInput.value)
     .then(res => {
-
+      console.log(res.totalScore, 'total score after submit')
       this.setState({
         currentWord: this.state.nextWord,
         guess: guessInput.value,
@@ -63,7 +66,8 @@ class LearningRoute extends Component {
   }
 
   render() {
-
+    console.log('render', this.state.totalScore)
+    //console.log('state', this.state)
     if(this.state.isCorrect === null){
       return (
         <section>
