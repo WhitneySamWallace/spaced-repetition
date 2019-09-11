@@ -6,9 +6,7 @@ import './DashboardRoute.css';
 
 class DashboardRoute extends Component {
   state =  {
-    words: [],
-    incorrect_count: null,
-    correct_count: null
+    words: []
   }
 
   componentDidMount() {
@@ -23,10 +21,11 @@ class DashboardRoute extends Component {
       )
         .then(data => {
           data.words.map(word => {
-            wordsArr.push(word.original);
-            this.setState({incorrect_count: word.incorrect_count, correct_count: word.correct_count, words: wordsArr})
+            wordsArr.push({word: word.original, correct: word.correct_count, incorrect: word.incorrect_count});
+
             return wordsArr;
           })
+          this.setState({words: wordsArr});
         })
         .catch(error => {
           console.error({error});
@@ -35,7 +34,7 @@ class DashboardRoute extends Component {
 
   render() {
     let words = this.state.words.map((word, index) => {
-      return (<li key={index}><h4>{word}</h4><p>correct answer count: {this.state.correct_count}</p><p>incorrect answer count: {this.state.incorrect_count}</p></li>)
+      return (<li key={index}><h4>{word.word}</h4><p>correct answer count: {word.correct}</p><p>incorrect answer count: {word.incorrect}</p></li>)
     });
     return (
       <section className='dashboard'>
