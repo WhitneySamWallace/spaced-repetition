@@ -7,12 +7,13 @@ class LearningRoute extends Component {
     wordCorrectCount: 0,
     incorrect: 0,
     totalScore: 0,
-    isCorrect: true
+    isCorrect: null
   }
 
   componentDidMount() {
     learnService.getWord()
       .then(res => {
+        console.log(res)
         this.setState({
           nextWord: res.nextWord,
           wordCorrectCount: res.wordCorrectCount,
@@ -28,6 +29,18 @@ class LearningRoute extends Component {
     console.log(word.original);
   }
 
+  nextQ = () => {
+    learnService.getWord()
+      .then(res => {
+        this.setState({
+          nextWord: res.nextWord,
+          wordCorrectCount: res.wordCorrectCount,
+          wordIncorrectCount: res.wordIncorrectCount,
+          totalScore: res.totalScore,
+        })
+      });
+  }
+
   handleSubmit = e => {
 
     e.preventDefault()
@@ -36,31 +49,32 @@ class LearningRoute extends Component {
 
     console.log(guessInput.value)
 
-    // learnService.checkAnswer({
-    //   guess: guessInput.value
-    // })
-    // .then(res => {
+    learnService.checkAnswer(guessInput.value)
+    .then(res => {
 
-    //   this.setState({
-    //     guess: guessInput.value
-    //     nextWord: res.nextWord,
-    //     totalScore: res.totalScore,
-    //     wordCorrectCount: res.wordCorrectCount,
-    //     wordIncorrectCount: res.wordIncorrectCount,
-    //     answer: res.answer,
-    //     isCorrect: res.isCorrect
-    //   })
+      console.log(res)
 
-    // })
-    // .catch(err => {
-    //   console.error(err.error)
-    // })
+      this.setState({
+        currentWord: this.state.nextWord,
+        guess: guessInput.value,
+        nextWord: res.nextWord,
+        totalScore: res.totalScore,
+        wordCorrectCount: res.wordCorrectCount,
+        wordIncorrectCount: res.wordIncorrectCount,
+        answer: res.answer,
+        isCorrect: res.isCorrect
+      })
+
+    })
+    .catch(err => {
+      console.error(err.error)
+    })
 
   }
 
   render() {
 
-    if(!this.state.isCorrect){
+    if(this.state.isCorrect === null){
       return (
         <section>
           <h2>Translate the word:</h2>
@@ -89,10 +103,14 @@ class LearningRoute extends Component {
 
       return(
         <div>
-          <p className='DisplayScore'>Your total score is: {this.state.totalScore}</p>
+          <div className='DisplayScore'>
+            <p>Your total score is: {this.state.totalScore}</p>
+          </div>
           <h2>You were correct! :D</h2>
-          <p className='DisplayFeedback'>The correct translation for {this.state.nextWord} was ${this.state.answer} and you chose ${this.state.guess}!`</p>
-          <button type='button'>Try another word!</button>
+          <div className='DisplayFeedback'>
+            <p>The correct translation for {this.state.currentWord} was {this.state.answer} and you chose {this.state.guess}!</p>
+          </div>
+          <button type='button' onClick={this.nextQ}>Try another word!</button>
         </div>
       )
 
@@ -101,10 +119,14 @@ class LearningRoute extends Component {
     if(this.state.isCorrect === false){
       return(
         <div>
-          <p className='DisplayScore'>Your total score is: {this.state.totalScore}</p>
+          <div className='DisplayScore'>
+            <p>Your total score is: {this.state.totalScore}</p>
+          </div>
           <h2>Good try, but not quite right :(</h2>
-          <p className='DisplayFeedback'>The correct translation for {this.state.nextWord} was ${this.state.answer} and you chose ${this.state.guess}!`</p>
-          <button type='button'>Try another word!</button>
+          <div className='DisplayFeedback'>
+            <p>The correct translation for {this.state.currentWord} was {this.state.answer} and you chose {this.state.guess}!</p>
+          </div>
+          <button type='button' onClick={this.nextQ}>Try another word!</button>
         </div>
       )
     }

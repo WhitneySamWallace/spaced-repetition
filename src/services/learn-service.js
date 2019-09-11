@@ -21,12 +21,14 @@ const learnService = {
   //get total score
   getScore() {},
 
-  checkAnswer(){
+  checkAnswer(guess){
     return fetch(`${config.API_ENDPOINT}/language/guess`, {
       method: 'POST',
       headers: {
         'authorization': `Bearer ${TokenService.getAuthToken()}`,
-      }
+        'content-type': 'application/json'
+      },
+      body: JSON.stringify({guess})
     })
     .then(res =>
         (!res.ok)
