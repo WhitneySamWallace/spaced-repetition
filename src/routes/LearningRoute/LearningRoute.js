@@ -14,6 +14,7 @@ class LearningRoute extends Component {
   componentDidMount() {
     learnService.getWord()
       .then(res => {
+        console.log('get word finished')
         this.setState({
           nextWord: res.nextWord,
           wordCorrectCount: res.wordCorrectCount,
@@ -47,7 +48,6 @@ class LearningRoute extends Component {
 
     learnService.checkAnswer(guessInput.value)
     .then(res => {
-
       this.setState({
         currentWord: this.state.nextWord,
         guess: guessInput.value,
@@ -73,8 +73,8 @@ class LearningRoute extends Component {
         <section>
           <h2>Translate the word:</h2>
           <div role='alert'>
-          {error && <p>{error}</p>}
-        </div>
+            {error && <p>{error}</p>}
+          </div>
           <span>{this.state.nextWord}</span>
           <form onSubmit = {(e) => this.handleSubmit(e)}>
             <label htmlFor='learn-guess-input'>What's the translation for this word?</label>
