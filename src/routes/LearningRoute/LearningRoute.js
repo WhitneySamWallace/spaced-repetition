@@ -21,12 +21,6 @@ class LearningRoute extends Component {
           totalScore: res.totalScore,
         })
       });
-    // console.log(word, word.original);
-  }
-
-  getWord = () => {
-    let word = learnService.getWord();
-    console.log(word.original);
   }
 
   nextQ = () => {
@@ -47,12 +41,8 @@ class LearningRoute extends Component {
 
     const { guessInput } = e.target;
 
-    console.log(guessInput.value)
-
     learnService.checkAnswer(guessInput.value)
     .then(res => {
-
-      console.log(res)
 
       this.setState({
         currentWord: this.state.nextWord,
