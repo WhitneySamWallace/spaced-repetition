@@ -7,7 +7,8 @@ class LearningRoute extends Component {
     wordCorrectCount: 0,
     incorrect: 0,
     totalScore: 0,
-    isCorrect: null
+    isCorrect: null,
+    error: null
   }
 
   componentDidMount() {
@@ -36,10 +37,13 @@ class LearningRoute extends Component {
   }
 
   handleSubmit = e => {
-
     e.preventDefault()
 
     const { guessInput } = e.target;
+
+    if(guessInput.value === ' ') {
+      return this.setState({error: 'Invalid guess'});
+    }
 
     learnService.checkAnswer(guessInput.value)
     .then(res => {
@@ -63,11 +67,14 @@ class LearningRoute extends Component {
   }
 
   render() {
-
+    const {error} = this.state;
     if(this.state.isCorrect === null){
       return (
         <section>
           <h2>Translate the word:</h2>
+          <div role='alert'>
+          {error && <p>{error}</p>}
+        </div>
           <span>{this.state.nextWord}</span>
           <form onSubmit = {(e) => this.handleSubmit(e)}>
             <label htmlFor='learn-guess-input'>What's the translation for this word?</label>
