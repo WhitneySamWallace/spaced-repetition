@@ -78,9 +78,7 @@ class LearningRoute extends Component {
           <div className='Learning-Route-alert' role='alert'>
             {error && <p>{error}</p>}
           </div>
-          <div className='Learning-Route-new-word'>
-            <span>{this.state.nextWord}</span>
-          </div>
+            <span className='Learning-Route-new-word'>{this.state.nextWord}</span>
           <form onSubmit = {(e) => this.handleSubmit(e)}>
             <label htmlFor='learn-guess-input'>What's the translation for this word?</label>
             <input 

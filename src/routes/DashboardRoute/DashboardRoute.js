@@ -3,15 +3,12 @@ import {Link} from 'react-router-dom';
 import config from '../../config';
 import TokenService from '../../services/token-service';
 import './DashboardRoute.css';
-// import {Redirect} from 'react-router-dom';
-// import userContext from '../../contexts/UserContext';
 
 class DashboardRoute extends Component {
   state =  {
     words: [],
     totalScore: 0,
     language: null,
-    error: null,
   }
 
   componentDidMount() {
@@ -34,7 +31,6 @@ class DashboardRoute extends Component {
         })
         .catch(error => {
           console.error({error});
-          // this.setState({error: error.message});
         })   
   }
 
