@@ -1,16 +1,11 @@
 .LoginForm{
-    border: 1px solid white;
     text-align: center;
     font-size: 18px;
     background-image: url('../../images/longnotecard.svg');
     background-repeat: no-repeat;
     background-position: top;
     background-size: 90vw;
-    /* height: 380px; */
     color: black;
-    /* margin-right: auto;
-    margin-left: auto;
-    padding: 30px;  */
     margin-right: 20px;
     margin-left: 0px;
     margin-bottom: 30px;
@@ -20,6 +15,7 @@
 
 .alert-log-in {
     margin-top: 80px;
+    color: rgb(241, 46, 79);
 }
 
 .LoginForm input {

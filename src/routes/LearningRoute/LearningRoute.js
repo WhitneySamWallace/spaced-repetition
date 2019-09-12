@@ -76,7 +76,9 @@ class LearningRoute extends Component {
           <div className='Learning-Route-alert' role='alert'>
             {error && <p>{error}</p>}
           </div>
-          <span>{this.state.nextWord}</span>
+          <div className='Learning-Route-new-word'>
+            <span>{this.state.nextWord}</span>
+          </div>
           <form onSubmit = {(e) => this.handleSubmit(e)}>
             <label htmlFor='learn-guess-input'>What's the translation for this word?</label>
             <input 
@@ -88,8 +90,8 @@ class LearningRoute extends Component {
               ></input>
             <button type='submit'>Submit your answer</button>
           </form>
-          <section>
-            <p>Your total score is: {this.state.totalScore}</p>
+          <section className='Learning-Route-scores'>
+            <p className='Learning-Route-first-score'>Your total score is: {this.state.totalScore}</p>
             <p>You have answered this word correctly {this.state.wordCorrectCount} times.</p>
             <p>You have answered this word incorrectly {this.state.wordIncorrectCount} times.</p>
           </section>
@@ -100,11 +102,11 @@ class LearningRoute extends Component {
     if(this.state.isCorrect === true){
 
       return(
-        <div>
+        <div className='DisplayScore-container'>
           <div className='DisplayScore'>
             <p>Your total score is: {this.state.totalScore}</p>
           </div>
-          <h2>You were correct! :D</h2>
+          <h2 className='correct'>You were correct! :D</h2>
           <div className='DisplayFeedback'>
             <p>The correct translation for {this.state.currentWord} was {this.state.answer} and you chose {this.state.guess}!</p>
           </div>
@@ -116,11 +118,11 @@ class LearningRoute extends Component {
 
     if(this.state.isCorrect === false){
       return(
-        <div>
+        <div className='DisplayScore-container'>
           <div className='DisplayScore'>
             <p>Your total score is: {this.state.totalScore}</p>
           </div>
-          <h2>Good try, but not quite right :(</h2>
+          <h2 className='incorrect'>Good try, but not quite right :(</h2>
           <div className='DisplayFeedback'>
             <p>The correct translation for {this.state.currentWord} was {this.state.answer} and you chose {this.state.guess}!</p>
           </div>
