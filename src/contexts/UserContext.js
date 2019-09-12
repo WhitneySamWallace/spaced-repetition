@@ -98,6 +98,7 @@ export class UserProvider extends Component {
       })
       .catch(err => {
         this.setError(err)
+        // this.processLogout();
       })
   }
 
