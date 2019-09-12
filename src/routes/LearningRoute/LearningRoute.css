@@ -1,0 +1,15 @@
+.Learning-Route {
+  font-family: 'Bangers', cursive;
+  display: flex;
+  flex-direction: column;
+  padding: 0 15px;
+}
+
+.Learning-Route h2 {
+  font-size: 30px;
+  text-align: center;
+}
+
+.Learning-Route-alert {
+  color: red;
+}

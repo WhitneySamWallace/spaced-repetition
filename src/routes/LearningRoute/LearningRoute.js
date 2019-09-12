@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import learnService from '../../services/learn-service'
+import './LearningRoute.css'
 
 class LearningRoute extends Component {
   state = {
@@ -70,9 +71,9 @@ class LearningRoute extends Component {
     const {error} = this.state;
     if(this.state.isCorrect === null){
       return (
-        <section>
+        <section className='Learning-Route'>
           <h2>Translate the word:</h2>
-          <div role='alert'>
+          <div className='Learning-Route-alert' role='alert'>
             {error && <p>{error}</p>}
           </div>
           <span>{this.state.nextWord}</span>
