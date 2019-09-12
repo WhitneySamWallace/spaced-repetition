@@ -33,6 +33,7 @@ class LearningRoute extends Component {
           wordIncorrectCount: res.wordIncorrectCount,
           totalScore: res.totalScore,
           isCorrect: null,
+          error: null
         })
       });
   }
@@ -43,27 +44,29 @@ class LearningRoute extends Component {
     const { guessInput } = e.target;
 
     if(guessInput.value === ' ') {
-      return this.setState({error: 'Invalid guess'});
+      this.setState({error: 'Invalid guess'});
+      guessInput.value = "";
     }
-
-    learnService.checkAnswer(guessInput.value)
-    .then(res => {
-      this.setState({
-        currentWord: this.state.nextWord,
-        guess: guessInput.value,
-        nextWord: res.nextWord,
-        totalScore: res.totalScore,
-        wordCorrectCount: res.wordCorrectCount,
-        wordIncorrectCount: res.wordIncorrectCount,
-        answer: res.answer,
-        isCorrect: res.isCorrect
+    else {
+      learnService.checkAnswer(guessInput.value)
+      .then(res => {
+        this.setState({
+          currentWord: this.state.nextWord,
+          guess: guessInput.value,
+          nextWord: res.nextWord,
+          totalScore: res.totalScore,
+          wordCorrectCount: res.wordCorrectCount,
+          wordIncorrectCount: res.wordIncorrectCount,
+          answer: res.answer,
+          isCorrect: res.isCorrect
+        })
+  
       })
-
-    })
-    .catch(err => {
-      console.error(err.error)
-    })
-
+      .catch(err => {
+        console.error(err.error)
+      })
+  
+    }
   }
 
   render() {
