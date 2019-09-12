@@ -15,7 +15,6 @@ class LearningRoute extends Component {
   componentDidMount() {
     learnService.getWord()
       .then(res => {
-        console.log('get word finished')
         this.setState({
           nextWord: res.nextWord,
           wordCorrectCount: res.wordCorrectCount,
@@ -116,7 +115,6 @@ class LearningRoute extends Component {
           <button type='button' onClick={this.nextQ}>Try another word!</button>
         </div>
       )
-
     }
 
     if(this.state.isCorrect === false){

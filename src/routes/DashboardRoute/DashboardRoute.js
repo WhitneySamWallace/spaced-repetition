@@ -3,13 +3,15 @@ import {Link} from 'react-router-dom';
 import config from '../../config';
 import TokenService from '../../services/token-service';
 import './DashboardRoute.css';
-// import learnService from '../../services/learn-service';
+// import {Redirect} from 'react-router-dom';
+// import userContext from '../../contexts/UserContext';
 
 class DashboardRoute extends Component {
   state =  {
     words: [],
     totalScore: 0,
     language: null,
+    error: null,
   }
 
   componentDidMount() {
@@ -23,7 +25,6 @@ class DashboardRoute extends Component {
         (!res.ok) ? res.json().then(e => Promise.reject(e)) : res.json()
       )
         .then(data => {
-          console.log(data);
           data.words.map(word => {
             wordsArr.push({word: word.original, correct: word.correct_count, incorrect: word.incorrect_count});
 
@@ -33,6 +34,7 @@ class DashboardRoute extends Component {
         })
         .catch(error => {
           console.error({error});
+          // this.setState({error: error.message});
         })   
   }
 
