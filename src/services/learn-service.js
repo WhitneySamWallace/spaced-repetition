@@ -17,11 +17,7 @@ const learnService = {
       : res.json()
     )
   },
-  //get correct and incorrect count
-  getCounts() {},
-  //get total score
-  getScore() {},
-
+  
   checkAnswer(guess){
     console.log('get response')
     return fetch(`${config.API_ENDPOINT}/language/guess`, {

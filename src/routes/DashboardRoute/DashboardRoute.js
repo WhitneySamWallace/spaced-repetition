@@ -3,7 +3,6 @@ import {Link} from 'react-router-dom';
 import config from '../../config';
 import TokenService from '../../services/token-service';
 import './DashboardRoute.css';
-// import learnService from '../../services/learn-service';
 
 class DashboardRoute extends Component {
   state =  {
