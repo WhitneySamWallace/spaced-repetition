@@ -86,6 +86,8 @@ class LearningRoute extends Component {
               placeholder='answer' 
               name='guessInput' 
               id='learn-guess-input'
+              aria-label='Learn guess input'
+              aria-required='true'
               required
               ></input>
             <button type='submit'>Submit your answer</button>
