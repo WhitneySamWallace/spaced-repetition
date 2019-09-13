@@ -55,6 +55,8 @@ class RegistrationForm extends Component {
             ref={this.firstInput}
             id='registration-name-input'
             name='name'
+            aria-label='Registration name input'
+            aria-required='true'
             required
           />
         </div>
@@ -65,6 +67,8 @@ class RegistrationForm extends Component {
           <Input
             id='registration-username-input'
             name='username'
+            aria-label='Registration username input'
+            aria-required='true'
             required
           />
         </div>
@@ -76,6 +80,8 @@ class RegistrationForm extends Component {
             id='registration-password-input'
             name='password'
             type='password'
+            aria-label='Registration password input'
+            aria-required='true'
             required
           />
         </div>
