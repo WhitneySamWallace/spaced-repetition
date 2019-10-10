@@ -5,7 +5,7 @@
 
 Our app helps users learn 10 Latin words with the use of our spaced repetition algorithm.
 
-Live Link: [Spaced Repetition Capstone](https://w-a-a-spaced-repetition.now.sh/)
+Live Link: [Spaced Repetition Capstone](https://w-a-a-learning-latin.now.sh/)
 
 ## Screenshots
 - Log In
